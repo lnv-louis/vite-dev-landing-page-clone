@@ -12,16 +12,19 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-bg text-text-1">
       <SiteNav />
-      <main>
-        <HeroSection />
-        <TrustedBy />
-        <FeatureSection />
-        <FrameworksSection />
-        <CommunitySection />
-        <SponsorsSection />
-        <CtaSection />
-      </main>
-      <SiteFooter />
+      {/* One continuous rail column so the vertical side-lines never break between sections. */}
+      <div className="rail-column">
+        <main>
+          <HeroSection />
+          <TrustedBy />
+          <FeatureSection />
+          <FrameworksSection />
+          <CommunitySection />
+          <SponsorsSection />
+          <CtaSection />
+        </main>
+        <SiteFooter />
+      </div>
     </div>
   );
 }

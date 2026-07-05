@@ -53,10 +53,20 @@ body {
 }
 
 /*
- * The signature vite.dev container: a centered 1248px column with vertical
- * "nickel" side borders. Section rows sit inside and divide horizontally.
+ * The signature vite.dev container: a centered 1248px column. The vertical
+ * "nickel" side rails are drawn ONCE on the page-level `.rail-column` parent so
+ * they run unbroken top-to-bottom; sections here only constrain width and add
+ * horizontal rules. Never put the side rails on individual sections — that is
+ * what breaks the column into disconnected pieces.
  */
 .wrapper-ticks {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+/* The single continuous column: one pair of side rails for the whole page. */
+.rail-column {
   width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
